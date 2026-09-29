@@ -1,0 +1,128 @@
+{
+  "assignment": "HW6 Model Deployment",
+  "model_version": "hw6-2026-09-28",
+  "trained_at_utc": "2026-09-29T03:01:18.354640+00:00",
+  "model_sha256": "e6426d41e709bd55a38ae290e5617aa64dba004ebd322ecf34c2dd4484d98222",
+  "model_name": "Random Forest",
+  "dataset_rows": 50000,
+  "feature_order": [
+    "Traditional_Study_Hours",
+    "Year_of_Study",
+    "Primary_Use_Case",
+    "Weekly_GenAI_Hours",
+    "Prompt_Engineering_Skill",
+    "Perceived_AI_Dependency",
+    "Anxiety_Level_During_Exams"
+  ],
+  "label_definition": "1 when Post_Semester_GPA > Pre_Semester_GPA; otherwise 0",
+  "confidence_threshold": 0.65,
+  "random_state": 42,
+  "split": {
+    "train": 0.7,
+    "validation": 0.15,
+    "test": 0.15
+  },
+  "validation_results": [
+    {
+      "model": "Random Forest",
+      "accuracy": 0.772030395947207,
+      "macro_f1": 0.6368024733894528
+    },
+    {
+      "model": "Decision Tree",
+      "accuracy": 0.7319024130115984,
+      "macro_f1": 0.6136387113110402
+    },
+    {
+      "model": "Logistic Regression",
+      "accuracy": 0.7031062524996667,
+      "macro_f1": 0.5915574960620291
+    }
+  ],
+  "test_metrics": {
+    "accuracy": 0.7741333333333333,
+    "macro_f1": 0.638876808813623
+  },
+  "numeric_ranges": {
+    "Traditional_Study_Hours": {
+      "min": 1.0,
+      "max": 35.86,
+      "median": 11.18
+    },
+    "Weekly_GenAI_Hours": {
+      "min": 0.0,
+      "max": 40.0,
+      "median": 5.82
+    },
+    "Perceived_AI_Dependency": {
+      "min": 1.0,
+      "max": 10.0,
+      "median": 3.0
+    },
+    "Anxiety_Level_During_Exams": {
+      "min": 1.0,
+      "max": 10.0,
+      "median": 4.0
+    }
+  },
+  "categories": {
+    "Year_of_Study": [
+      "Freshman",
+      "Sophomore",
+      "Junior",
+      "Senior",
+      "Graduate"
+    ],
+    "Primary_Use_Case": [
+      "Copywriting/Drafting",
+      "Debugging/Troubleshooting",
+      "Direct_Answer_Generation",
+      "Ideation",
+      "Summarizing_Reading"
+    ],
+    "Prompt_Engineering_Skill": [
+      "Beginner",
+      "Intermediate",
+      "Advanced"
+    ]
+  },
+  "demo_cases": {
+    "typical": {
+      "features": {
+        "Traditional_Study_Hours": 20.18,
+        "Year_of_Study": "Junior",
+        "Primary_Use_Case": "Debugging/Troubleshooting",
+        "Weekly_GenAI_Hours": 17.16,
+        "Prompt_Engineering_Skill": "Advanced",
+        "Perceived_AI_Dependency": 3,
+        "Anxiety_Level_During_Exams": 2
+      },
+      "actual": 1,
+      "prediction": 1,
+      "probability_improved": 0.998605,
+      "confidence": 0.998605
+    },
+    "low_confidence": {
+      "features": {
+        "Traditional_Study_Hours": 11.13,
+        "Year_of_Study": "Sophomore",
+        "Primary_Use_Case": "Copywriting/Drafting",
+        "Weekly_GenAI_Hours": 6.03,
+        "Prompt_Engineering_Skill": "Intermediate",
+        "Perceived_AI_Dependency": 1,
+        "Anxiety_Level_During_Exams": 3
+      },
+      "actual": 1,
+      "prediction": 0,
+      "probability_improved": 0.499983,
+      "confidence": 0.500017
+    }
+  },
+  "environment": {
+    "python": "3.13.1",
+    "pandas": "3.0.3",
+    "scikit_learn": "1.9.0",
+    "joblib": "1.5.3",
+    "numpy": "2.5.1"
+  }
+}

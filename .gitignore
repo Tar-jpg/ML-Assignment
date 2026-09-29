@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+tmp/
+
+# Training data is kept locally and is not required for inference deployment.
+ai_student_impact_dataset.csv
+
+# Previous homework artifacts are not part of the HW6 deployment bundle.
+HW4_*
+HW5_*
+README_HW6.md
